@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "VKSansDisplay";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url("@/app/styles/fonts/VKSansDisplay-Medium.woff2") format("woff2"),
+    url("@/app/styles/fonts/VKSansDisplay-Medium.woff") format("woff"),
+    url("@/app/styles/fonts/VKSansDisplay-Medium.ttf") format("ttf");
+}
