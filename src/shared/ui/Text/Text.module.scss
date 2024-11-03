@@ -1,0 +1,36 @@
+.text {
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+}
+
+.s {
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
+}
+
+.l {
+    font-size: var(--font-size-l);
+    line-height: var(--line-height-l);
+}
+
+.xl {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+}
+
+.white {
+    color: var(--bg-white);
+}
+
+.black {
+    color: var(--text-black);
+}
+
+.gray {
+    color: var(--text-gray);
+}
+
+.gray-light {
+    color: var(--text-gray-light);
+}

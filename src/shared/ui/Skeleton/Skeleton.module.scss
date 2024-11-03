@@ -1,0 +1,23 @@
+.skeleton {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    background:
+        linear-gradient(
+                90deg,
+                var(--skeleton-dark) 25%,
+                var(--skeleton-light) 50%,
+                var(--skeleton-dark) 85%
+        ) var(--skeleton-dark);
+    background-size: 200% 100%;
+    background-color: var(--skeleton-dark);
+    background-position-x: 165%;
+    animation: 1s load cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    overflow: hidden;
+}
+
+@keyframes load {
+    to {
+        background-position-x: -35%;
+    }
+}

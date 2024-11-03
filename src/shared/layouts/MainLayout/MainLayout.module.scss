@@ -1,0 +1,24 @@
+.main-layout {
+    position: relative;
+    display: grid;
+    gap: 16px;
+    grid-template-rows: 100px 1fr;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+}
+
+.main {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 566px 278px;
+    padding-bottom: 45px;
+}
+
+.content {}
+
+.filters {
+}
