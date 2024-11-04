@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
-import { AdditionalCls, classnames, Mods } from '@/shared/lib/classnames/classnames';
+import { classnames } from '@/shared/lib/classnames';
+import type { AdditionalCls, Mods } from '@/shared/lib/classnames';
 
 import cls from './Flex.module.scss';
 
@@ -48,6 +49,7 @@ export interface FlexProps {
     direction?: FlexDirection;
     max?: boolean;
     gap?: FlexGap;
+    'data-editable'?: string;
 }
 
 export const Flex = (props: FlexProps) => {
@@ -59,6 +61,7 @@ export const Flex = (props: FlexProps) => {
         direction = 'row',
         max,
         gap,
+        'data-editable': dataEditable,
     } = props;
 
     const mods: Mods = {
@@ -74,7 +77,10 @@ export const Flex = (props: FlexProps) => {
     ];
 
     return (
-        <div className={classnames(cls.flex, mods, classes)}>
+        <div
+            className={classnames(cls.flex, mods, classes)}
+            data-editable={dataEditable}
+        >
             {children}
         </div>
     );

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 import { typedMemo } from '@/shared/lib/HOC/typedMemo';
-import { classnames } from '@/shared/lib/classnames/classnames';
+import { classnames } from '@/shared/lib/classnames';
 
 import cls from './Tabs.module.scss';
 

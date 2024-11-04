@@ -1,0 +1,10 @@
+.info-wrapper {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+}
+
+.info-of-user {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}

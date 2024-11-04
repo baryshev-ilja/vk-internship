@@ -1,0 +1,1 @@
+export { pluralItems } from './pluralItems';

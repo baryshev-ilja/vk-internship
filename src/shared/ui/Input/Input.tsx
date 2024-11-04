@@ -1,6 +1,7 @@
 import { ChangeEvent, InputHTMLAttributes, useRef } from 'react';
 
-import { classnames, Mods } from '@/shared/lib/classnames/classnames';
+import { classnames } from '@/shared/lib/classnames';
+import type { Mods } from '@/shared/lib/classnames';
 
 import cls from './Input.module.scss';
 
@@ -9,7 +10,7 @@ type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onC
 interface InputProps extends HTMLInputProps {
     className?: string;
     value?: string | number;
-    onChange?: (value: string | number) => void;
+    onChange?: (value: string) => void;
     placeholder?: string;
     errorValidate?: boolean;
 }

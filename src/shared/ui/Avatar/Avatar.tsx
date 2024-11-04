@@ -7,7 +7,7 @@ import {
 
 import { Skeleton } from '../Skeleton';
 
-import { classnames } from '@/shared/lib/classnames/classnames';
+import { classnames } from '@/shared/lib/classnames';
 
 import cls from './Avatar.module.scss';
 

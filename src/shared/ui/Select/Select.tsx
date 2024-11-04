@@ -5,7 +5,7 @@ import { Icon } from '../Icon';
 import { Text } from '../Text';
 
 import ArrowIcon from '@/shared/assets/svg/arrow-icon.svg?react';
-import { classnames } from '@/shared/lib/classnames/classnames';
+import { classnames } from '@/shared/lib/classnames';
 
 import cls from './Select.module.scss';
 

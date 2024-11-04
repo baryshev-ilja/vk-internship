@@ -1,78 +1,55 @@
-import { MainLayout } from '@/shared/layouts/MainLayout';
-import { Card } from '@/shared/ui/Card';
-import { Header } from '@/shared/ui/Header';
-import { Select } from '@/shared/ui/Select';
-import { Tabs } from '@/shared/ui/Tabs';
+import { useEffect, useState } from 'react';
 
-import cls from './App.module.scss';
+import { User } from '@/entities/User';
+import { MainLayout } from '@/shared/layouts/MainLayout';
+import { CardSkeleton } from '@/shared/ui/CardSkeleton';
+import { Header } from '@/shared/ui/Header';
+import { VStack } from '@/shared/ui/Stack';
+import { UserCard } from '@/widgets/UserCard';
+import { UserFilters } from '@/widgets/UserFilters';
 
 export const App = () => {
-    const list = Array.from({ length: 75 }).fill(0).map((_) => {
-        return <div>sasdaSDAsdaSDAsd</div>;
-    });
+    const [data, setData] = useState<User>();
+    const [loading, setLoading] = useState<boolean>(true);
 
-    const itemsOptions = [
-        {
-            value: 'all',
-            content: 'Любой',
-            disabled: false,
-        },
-        {
-            value: 'male',
-            content: 'Мужчина',
-            disabled: false,
-        },
-        {
-            value: 'female',
-            content: 'Женщина',
-            disabled: false,
-        },
-    ];
+    useEffect(() => {
+        fetch('https://randomuser.me/api/')
+            .then((res) => res.json())
+            .then((data) => {
+                setData(data.results[0]);
+                setLoading(false);
+            });
+    }, []);
 
-    const tabsItems = [
-        {
-            value: 'all country',
-            content: 'Все страны',
-        },
-        {
-            value: 'US',
-            content: 'США',
-        },
-        {
-            value: 'DE',
-            content: 'Германия',
-        },
-    ];
+    let block;
 
-    const block = (
-        <Card>
-            {list}
-        </Card>
-    );
+    if (!data && loading) {
+        block = <CardSkeleton />;
+    }
+
+    if (data && !loading) {
+        block = (
+            <VStack gap="16">
+                <UserCard userData={data} />
+                <UserCard userData={data} />
+                <UserCard userData={data} />
+                <UserCard userData={data} />
+                <UserCard userData={data} />
+                <UserCard userData={data} />
+                <UserCard userData={data} />
+                <UserCard userData={data} />
+                <UserCard userData={data} />
+                <UserCard userData={data} />
+                <UserCard userData={data} />
+            </VStack>
+        );
+    }
 
     return (
         <MainLayout
             className="app"
             header={<Header />}
-            filters={(
-                <div className={cls.filters}>
-                    <Card>
-                        <Select
-                            currentValue="male"
-                            items={itemsOptions}
-                            onChange={() => {}}
-                            label="Пол пользователя:"
-                        />
-                    </Card>
-                    <Card>
-                        <Tabs
-                            tabs={tabsItems}
-                            currentValue="DE"
-                            onTabClick={() => {}}
-                        />
-                    </Card>
-                </div>
-            )}
+            filters={<UserFilters />}
             content={block}
         />
     );

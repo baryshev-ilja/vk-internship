@@ -4,6 +4,13 @@
 @import "variables";
 @import "container";
 
+html {
+    padding-left: calc(100vw - 100%);
+    padding-right: 0;
+    overflow: auto;
+    background-color: var(--bg-app);
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;

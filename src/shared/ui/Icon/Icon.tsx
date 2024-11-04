@@ -1,6 +1,6 @@
 import { SVGProps, VFC } from 'react';
 
-import { classnames } from '@/shared/lib/classnames/classnames';
+import { classnames } from '@/shared/lib/classnames';
 
 import cls from './Icon.module.scss';
 

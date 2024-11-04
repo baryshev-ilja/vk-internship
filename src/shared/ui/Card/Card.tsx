@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { classnames } from '@/shared/lib/classnames/classnames';
+import { classnames } from '@/shared/lib/classnames';
 
 import cls from './Card.module.scss';
 

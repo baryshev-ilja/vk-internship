@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
-import { AdditionalCls, classnames } from '@/shared/lib/classnames/classnames';
+import { classnames } from '@/shared/lib/classnames';
+import type { AdditionalCls } from '@/shared/lib/classnames';
 
 import cls from './Text.module.scss';
 
